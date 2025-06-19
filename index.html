@@ -25,10 +25,16 @@ div {
   font-family:;
 
 }
+.NavBarItem:hover {
+  background-color: gray
+}
 .Pitons {
   margin: 0px -8px;
   container-type: inline-size;
   container-name: containerp;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
 }
 .PitonsImage {
 
@@ -54,6 +60,9 @@ div {
      font-size: 154px;
   }
 }
+.Dropdown:active {
+
+}
 </style>
 
 <head>
@@ -65,6 +74,7 @@ div {
  <a href="#" class="NavBarItem"> Home </a>
   <a href="#AboutUs" class="NavBarItem"> About Us </a>
  <a class="NavBarItem"> Events & Activities </a>
+ <a class="NavBarItem Dropdown"> More </a>
 </div>
 <div class="Pitons">
     <img src="Pitons-aerial.avif" alt="The Pitons" style="max-width:100%; height:auto;">
