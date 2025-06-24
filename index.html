@@ -10,12 +10,13 @@ div {
   background-color: black;
   font-size: 20px;
   margin: -8px -8px 0px -8px;
+
 }
 .NavBarItem {
   border: 0px;
   background-color: black;
   font-size: 20px;
-  padding: 10px 34px;
+  padding: 20px 34px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -60,9 +61,31 @@ div {
      font-size: 154px;
   }
 }
-.Dropdown:active {
+.DropdownHeader {
+padding: 20px 34px;
+}
+.DropdownContent {
+height: 0px;
+visibility: hidden;
+z-index: 10;
+margin: 0px 0px;
 
 }
+.Dropdown:hover  .DropdownContent{
+visibility: visible;
+height: auto;
+
+}
+.Dropdown {
+display: grid;
+max-width: ;
+position: absolute;
+top: 10px;
+left:280px;
+background-color: black;
+}
+
+
 </style>
 
 <head>
@@ -70,16 +93,23 @@ div {
 
 </head>
 
-<div class="NavBar">
- <a href="#" class="NavBarItem"> Home </a>
-  <a href="#AboutUs" class="NavBarItem"> About Us </a>
- <a class="NavBarItem"> Events & Activities </a>
- <a class="NavBarItem Dropdown"> More </a>
-</div>
+
+  <div class="NavBar">
+    <a href="#" class="NavBarItem"> Home </a>
+    <a href="#AboutUs" class="NavBarItem"> About Us </a>
+  </div>
+
+  <div class="Dropdown" style="margin: -10px 0px 0px 0px;">
+    <a class="NavBarItem DropdownHeader" id="DropdownHeader"> More </a>
+    <div class="DropdownContent" id="DropdownContent">
+      <a class="NavBarItem DropdownContent"> Events & <br> Activities </a>
+    </div>
+  </div>
+
 <div class="Pitons">
     <img src="Pitons-aerial.avif" alt="The Pitons" style="max-width:100%; height:auto;">
     <div class="PitonsText" style=" position: absolute; top: 100px; left: 16px text-size-adjust: auto;">Connecting the <br> Lucian youth <br> diaspora</div> <br>
-  <nobr><a style="color:white;" class="PitonsImage"> Pitons-aerial.jpg by Caribbeandy /</a>  <a style="color:white;" href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC BY-SA 4.0 </a></nobr>
+  <nobr><a style="color:white; " class="PitonsImage"> Pitons-aerial.jpg by Caribbeandy /</a>  <a style="color:white;" href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC BY-SA 4.0 </a></nobr>
 </div>
 <div id="AboutUs" class="AboutUs">
   <h2 style="font-size:50px; padding: 20px 0px 0px 0px; color: white;">About Us</h2>
