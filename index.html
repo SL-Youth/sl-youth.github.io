@@ -24,7 +24,19 @@ div {
   cursor: pointer;
   color: white;
   font-family:;
-
+}
+.NavBarItemMobile {
+  border: 0px;
+  background-color: black;
+  font-size: 20px;
+  padding: 20px 34px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 1px 2px;
+  cursor: pointer;
+  color: white;
+  font-family:;
 }
 .NavBarItem:hover {
   background-color: gray
@@ -61,6 +73,15 @@ div {
      font-size: 154px;
   }
 }
+@media screen and (max-width: 1300px) {
+  .HamburgerMenu {
+  display: block !important;
+  }
+ .NavBarItem {
+  display: none;
+  }
+
+}
 .DropdownHeader {
 padding: 20px 34px;
 }
@@ -76,6 +97,7 @@ visibility: visible;
 height: auto;
 
 }
+
 .Dropdown {
 display: grid;
 max-width: ;
@@ -85,7 +107,28 @@ left:280px;
 background-color: black;
 }
 
+#btnControl {
+display:none;
+}
 
+#btnControl:checked + label > .MobileNav  {
+  display: flex;
+}
+#btnControl:checked + label > .HamburgerMenu  {
+  display: none;
+}
+.MobileNav {
+  display: flex;
+  flex-direction:column;
+  z-index: 10;
+  position: sticky;
+  background-color: black;
+  margin: 0px 0px;
+  display: none;
+}
+.HamburgerMenu {
+  display:none;
+}
 </style>
 
 <head>
@@ -95,14 +138,26 @@ background-color: black;
 
 
   <div class="NavBar">
+  <input type="checkbox" id="btnControl"/>
+  <label for=btnControl>
+  <img src="Hamburger_icon.svg" style="padding:5px; height: auto; width: 3vw;" class="HamburgerMenu" input_type="checkbox">
+<div class="MobileNav">
+  <img src="X_symbol.svg" style="height: auto; width: 2vw; align-self: flex-end; padding: 5px 0px 0px 5px; margin: 0px 0px;" >
+    <a href="#" class="NavBarItemMobile"> Home </a>
+    <a href="#AboutUs" class="NavBarItemMobile"> About Us </a>
+    <a class="NavBarItemMobile"> Events & Activities </a>
+  </div>
+  </label>
     <a href="#" class="NavBarItem"> Home </a>
     <a href="#AboutUs" class="NavBarItem"> About Us </a>
   </div>
 
+
+
   <div class="Dropdown" style="margin: -10px 0px 0px 0px;">
     <a class="NavBarItem DropdownHeader" id="DropdownHeader"> More </a>
     <div class="DropdownContent" id="DropdownContent">
-      <a class="NavBarItem DropdownContent"> Events & <br> Activities </a>
+      <a class="NavBarItem DropdownContent"> Events & <br> Activities </a> <br>
     </div>
   </div>
 
@@ -121,6 +176,4 @@ background-color: black;
     <img class="Flag" src="Flag_of_Saint_Lucia.svg">
   </div>
     </div>
-
-
 </div>
