@@ -3,9 +3,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
 html {background-color: 000414 }
-div {
- font-family:;
-}
 .NavBar {
   background-color: black;
   font-size: 20px;
@@ -80,6 +77,13 @@ div {
  .NavBarItem {
   display: none;
   }
+  #btnControl {
+ checked=false;
+}
+  .NavBar {
+  position:sticky;
+  top:0px;
+  }
 
 }
 .DropdownHeader {
@@ -114,6 +118,18 @@ display:none;
 #btnControl:checked + label > .MobileNav  {
   display: flex;
 }
+#btnControl:checked ~ .NavBarItem  {
+  display: none;
+}
+body:has(#btnControl:checked) .Dropdown {
+  display:none;
+}
+body:has(#btnControl:checked) .NavBar {
+  z-index: 10;
+  position:sticky;
+  top:0px;
+}
+
 
 .MobileNav {
   display: flex;
@@ -123,9 +139,13 @@ display:none;
   background-color: black;
   margin: 0px 0px;
   display: none;
+  top: 0px;
 }
 .HamburgerMenu {
   display:none;
+}
+#btnControl:checked + label >  .HamburgerMenu  {
+ display: block;
 }
 </style>
 
