@@ -14,7 +14,7 @@ html {background-color: 000414 }
   border: 0px;
   background-color: black;
   font-size: 20px;
-  padding: 20px 34px;
+  padding: 50px 34px 10px 34px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -79,38 +79,14 @@ html {background-color: 000414 }
  .NavBarItem {
   display: none;
   }
-  #btnControl {
- checked=false;
-}
   .NavBar {
   position:sticky;
   top:0px;
   }
+  .ElementJustification {
+  justify-content: space-between !important;
+  }
 
-}
-.DropdownHeader {
-padding: 20px 34px;
-}
-.DropdownContent {
-height: 0px;
-visibility: hidden;
-z-index: 10;
-margin: 0px 0px;
-
-}
-.Dropdown:hover  .DropdownContent{
-visibility: visible;
-height: auto;
-
-}
-
-.Dropdown {
-display: grid;
-max-width: ;
-position: absolute;
-top: 10px;
-left:280px;
-background-color: black;
 }
 
 #btnControl {
@@ -120,8 +96,8 @@ display:none;
 #btnControl:checked + label > .MobileNav  {
   display: flex;
 }
-#btnControl:checked ~ .NavBarItem  {
-  display: none;
+body:has(#btnControl:checked) .NavBarItem {
+  display:none;
 }
 body:has(#btnControl:checked) .Dropdown {
   display:none;
@@ -145,8 +121,11 @@ body:has(#btnControl:checked) .NavBar {
 .HamburgerMenu {
   display:none;
 }
-#btnControl:checked + label >  .HamburgerMenu  {
- display: block;
+body:has(#btnControl:checked) .HamburgerMenu {
+  display: block;
+}
+body:has(#btnControl:checked) .ElementJustification {
+  justify-content: space-between !important;
 }
 </style>
 
@@ -158,28 +137,33 @@ body:has(#btnControl:checked) .NavBar {
 
   <div class="NavBar">
   <input type="checkbox" id="btnControl"/>
+
   <label for=btnControl>
-  <img src="Hamburger_icon.svg" style="padding:5px; height: auto; width: 10vw;" class="HamburgerMenu" input_type="checkbox">
+  <span class="ElementJustification" style="display: flex; justify-content: left;">
+    <a href="#">
+      <img src="SLYouthLogo.svg" alt="St. Lucian Youth Group Logo" style="width:10vw;">
+    </a>
+    <img src="Hamburger_icon.svg" style="padding:5px; height: auto; width: 10vw; " class="HamburgerMenu" input_type="checkbox">
+    <a href="" class="NavBarItem"> Home </a>
+    <a href="#AboutUs" class="NavBarItem"> About Us </a>
+    <a class="NavBarItem" href="#"> Events & Activities </a>
+  </span>
 <div class="MobileNav">
     <a href="#" class="NavBarItemMobile"> Home </a>
     <a href="#AboutUs" class="NavBarItemMobile"> About Us </a>
     <a class="NavBarItemMobile"> Events & Activities </a>
   </div>
   </label>
-    <a href="#" class="NavBarItem"> Home </a>
-    <a href="#AboutUs" class="NavBarItem"> About Us </a>
+  <span>
+
+    </span>
   </div>
 
-  <div class="Dropdown" style="margin: -10px 0px 0px 0px;">
-    <a class="NavBarItem DropdownHeader" id="DropdownHeader"> More </a>
-    <div class="DropdownContent" id="DropdownContent">
-      <a class="NavBarItem DropdownContent"> Events & <br> Activities </a> <br>
-    </div>
-  </div>
+
 
 <div class="Pitons">
     <img src="Pitons-aerial.avif" alt="The Pitons" style="max-width:100%; height:auto;">
-    <div class="PitonsText" style=" position: absolute; top: 100px; left: 16px text-size-adjust: auto;">Connecting the <br> Lucian youth <br> diaspora</div> <br>
+    <div class="PitonsText" style=" position: absolute; top: 20vh; left: 16px text-size-adjust: auto;">Connecting the <br> Lucian youth <br> diaspora</div> <br>
   <span><a style="color:white; " class="PitonsImage"> Pitons-aerial.jpg by Caribbeandy /</a>  <a style="color:white;" href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">CC BY-SA 4.0 </a></span>
 </div>
 <div id="AboutUs" class="AboutUs">
