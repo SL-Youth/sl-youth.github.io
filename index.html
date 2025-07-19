@@ -93,7 +93,7 @@ html {background-color: 000414 }
 display:none;
 }
 
-#btnControl:checked + label > .MobileNav  {
+body:has(#btnControl:checked)   .MobileNav  {
   display: flex;
 }
 body:has(#btnControl:checked) .NavBarItem {
@@ -138,12 +138,14 @@ body:has(#btnControl:checked) .ElementJustification {
   <div class="NavBar">
   <input type="checkbox" id="btnControl"/>
 
-  <label for=btnControl>
-  <span class="ElementJustification" style="display: flex; justify-content: left;">
+
+  <span class="ElementJustification" style="display: flex; justify-content: left;" href="#">
     <a href="#">
       <img src="SLYouthLogo.svg" alt="St. Lucian Youth Group Logo" style="width:10vw; padding:5px;">
     </a>
+    <label for=btnControl>
     <img src="Hamburger_icon.svg" style="padding:5px; height: auto; width: 10vw; " class="HamburgerMenu" input_type="checkbox">
+     </label>
     <a href="" class="NavBarItem"> Home </a>
     <a href="#AboutUs" class="NavBarItem"> About Us </a>
     <a class="NavBarItem" href="#"> Events & Activities </a>
@@ -153,7 +155,7 @@ body:has(#btnControl:checked) .ElementJustification {
     <a href="#AboutUs" class="NavBarItemMobile"> About Us </a>
     <a class="NavBarItemMobile"> Events & Activities </a>
   </div>
-  </label>
+
   <span>
 
     </span>
